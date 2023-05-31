@@ -1,0 +1,10 @@
+.carousel-indicators{
+    position: absolute;
+    bottom: 1rem;
+}
+
+.carousel-inner .carousel-item img{
+ height: 65vh;
+ width: 100%;
+ object-fit: cover;
+}
