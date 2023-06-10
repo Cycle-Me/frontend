@@ -96,6 +96,12 @@ img{
     color: black;
 }
 
+.btn-light:hover{
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: black;
+}
+
 /* home */
 #home{
     background: linear-gradient(rgba(var(--c-brand-rgb), 0.300), rgba(0, 0, 0, 0.804)), url(../images/sortingwaste.jpg);
@@ -163,8 +169,8 @@ img{
     color: white;
 }
 
-/* reason */
-#reason {
+/* download */
+#download {
     background: linear-gradient(rgba(var(--c-brand-rgb), 0.300), rgba(0, 0, 0, 0.804)), url(../images/reason.jpg);
     background-position: center;
     background-size: cover;
@@ -179,4 +185,41 @@ img{
  height: 65vh;
  width: 100%;
  object-fit: cover;
+}
+
+/* IMAGE ZOOM */
+.image-zoom {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.image-zoom-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img{
+     transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-wrapper img {
+    transform: scale(1.1);
+}
+
+/* TEAM */
+.team-member-content {
+    background-color: var(--c-brand);
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    width: calc(100% - 50px);
+    transform: translateX(-50%);
+    padding: 24px;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.team-member:hover .team-member-content {
+    opacity: 1;
+    bottom: 24px;
 }
