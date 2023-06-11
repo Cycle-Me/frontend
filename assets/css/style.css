@@ -176,7 +176,7 @@ img{
     background-size: cover;
 }
 
-.carousel-indicators{
+/* .carousel-indicators{
     position: absolute;
     bottom: 1rem;
 }
@@ -185,7 +185,7 @@ img{
  height: 65vh;
  width: 100%;
  object-fit: cover;
-}
+} */
 
 /* IMAGE ZOOM */
 .image-zoom {
@@ -240,9 +240,7 @@ footer {
 }
 
 
-footer li,
-footer p,
-footer a {
+footer li, footer p, footer a {
     color: rgba(255,255,255,0.7);
 }
 
