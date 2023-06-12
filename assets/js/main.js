@@ -1,3 +1,40 @@
+// feedback.js start
+// document.getElementById("feedback-form").addEventListener("submit", function(event) {
+//   event.preventDefault(); // Prevent form submission
+
+//   // Get form values
+//   var email = document.getElementById("email").value;
+//   var subject = document.getElementById("subject").value;
+//   var message = document.getElementById("message").value;
+
+//   // Send feedback data to server (replace with your own implementation)
+//   // Example using Fetch API
+//   fetch("/submit-feedback", {
+//     method: "POST",
+//     body: JSON.stringify({ email: email, subject: subject, message: message }),
+//     headers: {
+//       "Content-Type": "application/json"
+//     }
+//   })
+//   .then(function(response) {
+//     if (response.ok) {
+//       alert("Thank you for your feedback!");
+//       // Clear form fields
+//       document.getElementById("email").value = "";
+//       document.getElementById("subject").value = "";
+//       document.getElementById("message").value = "";
+//     } else {
+//       alert("Error submitting feedback. Please try again.");
+//     }
+//   })
+//   .catch(function(error) {
+//     console.log("Error:", error);
+//     alert("Error submitting feedback. Please try again.");
+//   });
+// });
+// feedback.js end
+
+// animation.js start
 AOS.init({
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 120, // offset (in px) from the original trigger point
@@ -9,3 +46,4 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   
   });
+  // animation.js end
