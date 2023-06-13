@@ -1,15 +1,17 @@
-FROM python:3.9-slim
+# Use the official Python image as the base image
+FROM python:3.9
 
+# Set the working directory inside the container
+WORKDIR /app
 
-ENV PYTHONUNBUFFERED True
+# Copy the requirements.txt file to the working directory
+COPY requirements.txt .
 
+# Install the project dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . ./
+# Copy the application code to the working directory
+COPY . .
 
-
-RUN pip install -r requirements.txt
-
-
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
+# Set the entry point to the Flask application
+CMD ["python", "api.py"]

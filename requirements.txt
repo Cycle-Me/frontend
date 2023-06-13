@@ -1,5 +1,2 @@
-Flask
-gunicorn
-flask_cors
-smtplib
-sqlite3
+Flask==2.0.2
+Flask-Cors==3.0.10
