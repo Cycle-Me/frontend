@@ -56,7 +56,12 @@ def send_email(feedback_data):
 
 
 def save_feedback_to_database(feedback_data):
-    connection = sqlite3.connect('feedback.db')
+    connection = sqlite3.connect(
+        host='35.225.237.23',
+        user='myuser',
+        password='mypass',
+        database='feedback'
+    )
     cursor = connection.cursor()
 
     cursor.execute('CREATE TABLE IF NOT EXISTS feedback (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, subject TEXT, message TEXT)')
