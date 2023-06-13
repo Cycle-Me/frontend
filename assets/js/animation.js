@@ -1,8 +1,3 @@
-// feedback.js start
-
-// feedback.js end
-
-// animation.js start
 AOS.init({
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 120, // offset (in px) from the original trigger point
@@ -14,4 +9,3 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   
   });
-  // animation.js end
