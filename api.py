@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('https://frontend-dot-cycleme-2023.et.r.appspot.com')
 
 
 @app.route('/feedback', methods=['POST', 'OPTIONS'])
