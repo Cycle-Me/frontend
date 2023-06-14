@@ -5,13 +5,17 @@ FROM python:3.9
 WORKDIR /app
 
 # Copy the requirements.txt file to the working directory
-COPY requirements.txt .
+COPY requirements.txt /app
 
 # Install the project dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+COPY assets /app/assets
+
+COPY index.html /app
 
 # Copy the application code to the working directory
 COPY . .
 
 # Set the entry point to the Flask application
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 api:app
+CMD ["python", "feedback_api.py"]
