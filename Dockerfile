@@ -17,5 +17,7 @@ COPY index.html /app
 # Copy the application code to the working directory
 COPY . .
 
+EXPOSE 8080
+
 # Set the entry point to the Flask application
 CMD ["python", "feedback_api.py"]
