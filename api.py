@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, make_response
 import smtplib
-import sqlite3
+import mysql.connector
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('https://frontend-dot-cycleme-2023.et.r.appspot.com')
+    return render_template('index.html')
 
 
 @app.route('/feedback', methods=['POST', 'OPTIONS'])
@@ -56,17 +56,17 @@ def send_email(feedback_data):
 
 
 def save_feedback_to_database(feedback_data):
-    connection = sqlite3.connect(
+    connection = mysql.connector.connect(
         host='35.225.237.23',
         user='myuser',
         password='mypass',
-        database='feedback'
+        database='feedback',
     )
     cursor = connection.cursor()
 
-    cursor.execute('CREATE TABLE IF NOT EXISTS feedback (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, subject TEXT, message TEXT)')
+    cursor.execute('CREATE TABLE IF NOT EXISTS feedback (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255), subject VARCHAR(255), message TEXT)')
 
-    cursor.execute('INSERT INTO feedback (email, subject, message) VALUES (?, ?, ?)',
+    cursor.execute('INSERT INTO feedback (email, subject, message) VALUES (%s, %s, %s)',
                    (feedback_data['email'], feedback_data['subject'], feedback_data['message']))
 
     connection.commit()
