@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, make_response
+from flask import Flask, request, make_response
 import smtplib
 import mysql.connector
 from flask_cors import CORS
@@ -9,7 +9,9 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return """
+        Response Successful!
+    """
 
 
 @app.route('/feedback', methods=['POST', 'OPTIONS'])

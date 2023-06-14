@@ -10,10 +10,6 @@ COPY requirements.txt /app
 # Install the project dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY assets /app/assets
-
-COPY index.html /app
-
 # Copy the application code to the working directory
 COPY . .
 
