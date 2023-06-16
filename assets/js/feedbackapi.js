@@ -11,7 +11,7 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
         message: message
     };
 
-    axios.post('http://localhost:5000/feedback', data)
+    axios.post('https://feedback-api-ilhkkpshpa-uc.a.run.app/feedback', data)
         .then(function(response) {
         alert(response.data);
         document.getElementById('email').value = '';
